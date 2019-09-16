@@ -27,9 +27,6 @@ public class RootTestConfig {
 	
 	@Resource(name = "datasource")
 	private BasicDataSource datasource;
-	 
-	 
-
 	
 	   // junit 테스트 메소드 실행 순서
 	   // @Before -> @Test -> @After
