@@ -9,7 +9,7 @@
 		
 	<!-- @controller 어노테이션이 붙은 클래스만 스캔 -->
 	<context:component-scan base-package="kr.or.ddit" use-default-filters="false">
-		<context:include-filter type="annotation" expression="org.springframework.stereotype.controller"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 		
 	</context:component-scan>
 	
@@ -27,7 +27,7 @@
 	
 	<!-- view resolver : jsp - internalResourceViewResolver -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/views"/> <!-- 접두어 -->
+		<property name="prefix" value="/WEB-INF/views/"/> <!-- 접두어 -->
 		<property name="suffix" value=".jsp"/> <!-- 접미어 -->
 		<!-- controller에서 리턴하는 viewName prefix와 suffix가 결합되서 jsp경로를 판단 
 			 ex : controller 리턴한 viewName : index 
