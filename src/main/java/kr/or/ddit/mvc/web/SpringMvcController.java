@@ -160,6 +160,9 @@ public class SpringMvcController {
 		reAttr.addAttribute("alias","bear");
 		
 		return "redirect:/login";
+		// redirect : "redirect:url주소";
+		// forward : "forward:url주소"; //다른 컨트롤러로 forward
+		// 원본 요청이 get이면 forward 메서드 get (http method에 대해 고려해야함)
 	}
 
 }
