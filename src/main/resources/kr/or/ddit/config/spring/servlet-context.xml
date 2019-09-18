@@ -10,6 +10,7 @@
 	<!-- @controller 어노테이션이 붙은 클래스만 스캔 -->
 	<context:component-scan base-package="kr.or.ddit" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
 		
 	</context:component-scan>
 	
@@ -42,6 +43,15 @@
 		<property name="maxUploadSizePerFile" value="26214400"/> <!-- 25mb -->
 		<!-- 1000000bytes = 1000kbytes = 1mb -->
 		
+	</bean>
+	
+	<!-- resource bundle -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>classpath:kr/or/ddit/config/msg/error</value>
+			</list>
+		</property>
 	</bean>
 	
 

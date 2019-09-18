@@ -3,6 +3,8 @@ package kr.or.ddit.user.model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -14,6 +16,7 @@ public class User {
    private static final Logger logger = LoggerFactory.getLogger(User.class);
 
    private String userId;    	  // 사용자 아이디
+   @NotNull
    private String pass;      	  // 사용자 비밀번호
    private String userNM;  	      // 사용자 이름
    private String alias;     	  // 사용자 별명
