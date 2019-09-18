@@ -168,8 +168,8 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.9.4</version>
 		</dependency>
-		
-				<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
@@ -189,9 +189,16 @@
 			<artifactId>commons-dbcp2</artifactId>
 			<version>2.7.0</version>
 		</dependency>
-		
+
+		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.4</version>
+		</dependency>
+
 
 	</dependencies>
-	
-	
+
+
 </project>

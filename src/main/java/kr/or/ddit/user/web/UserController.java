@@ -25,7 +25,7 @@ public class UserController {
 	
 	@Resource(name = "userService")
 	private IUserService userService;
-	//private UserService userService <-- 하지마세용 관점지향을 리빌드 개념이니깐 > _ <
+	//private UserService userService 
 	
 	
 	/**
@@ -74,7 +74,7 @@ public class UserController {
 	
 	@RequestMapping(path = "userPagingList", method = RequestMethod.GET)
 	//public String userPagingList(int page, int pagesize, Model model) {
-	public String userPagingList(Page page,  Model model) {
+	public String userPagingList( Page page,  Model model) {
 		//사용자 정보 페이징 전체 조회
 		
 		
