@@ -16,8 +16,11 @@
 		<config>src/main/resources/kr/or/ddit/config/spring/context-transaction.xml</config>
 		<config>src/main/resources/kr/or/ddit/config/spring/context-root.xml</config>
 		<config>src/main/resources/kr/or/ddit/config/spring/servlet-context.xml</config>
+		<config>src/main/resources/kr/or/ddit/config/spring/context-interceptors.xml</config>
 	</configs>
 	<autoconfigs>
+		<config>src/test/resources/kr/or/ddit/config/spring/context-root.xml</config>
+		<config>src/test/resources/kr/or/ddit/config/spring/context-transaction.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>
