@@ -37,12 +37,12 @@
          </div>
          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-            <form class="form-horizontal" role="form" action="${cp}/userModify" method="post" enctype="multipart/form-data">
+            <form class="form-horizontal" role="form" action="${cp}/user/userModify" method="post" enctype="multipart/form-data">
 
                <div class="form-group">
                   <label for="userNm" class="col-sm-2 control-label">사용자 사진</label>
                   <div class="col-sm-10">
-                     <img src ="${cp }/userPicture?userId=${user.userId }"/>
+                     <img src ="${cp }/user/userPicture?userId=${user.userId }"/>
 						<input id="picture" type="file" name="picture"/> <br>
                   </div>
                </div>
@@ -58,7 +58,7 @@
                <div class="form-group">
                   <label for="userNm" class="col-sm-2 control-label">사용자 이름</label>
                   <div class="col-sm-10">
-                  <input type="text" id="inputName" name = "userNM" class="form-control" value=${user.userNM } required>
+                  <input type="text" id="inputName" name = "userNm" class="form-control" value=${user.userNm } required>
                   </div>
                </div>
 

@@ -18,7 +18,7 @@ public class User {
    private String userId;    	  // 사용자 아이디
    @NotNull
    private String pass;      	  // 사용자 비밀번호
-   private String userNM;  	      // 사용자 이름
+   private String userNm;  	      // 사용자 이름
    private String alias;     	  // 사용자 별명
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date reg_dt;
@@ -32,12 +32,12 @@ public class User {
    public User() { }
 
    public User(String userNm) {
-      this.userNM = userNm;
+      this.userNm = userNm;
    }
 
    public User(String userId, String userNm, String alias, Date reg_dt, String addr1, String addr2, String zipcode, String pass, String filename, String realfilename) {
       this.userId = userId;
-      this.userNM = userNm;
+      this.userNm = userNm;
       this.alias = alias;
       this.reg_dt = reg_dt;
       this.addr1 = addr1;
@@ -57,12 +57,12 @@ public void setRealfilename2(String realfilename2) {
 	this.realfilename2 = realfilename2;
 }
 
-public String getUserNM() {
-      return userNM;
+public String getuserNm() {
+      return userNm;
    }
 
-   public void setUserNM(String userNm) {
-      this.userNM = userNm;
+   public void setuserNm(String userNm) {
+      this.userNm = userNm;
    }
 
    public String getUserId() {
@@ -105,7 +105,7 @@ public String getUserNM() {
 
    @Override
 public String toString() {
-	return "User [userId=" + userId + ", pass=" + pass + ", userNM=" + userNM + ", alias=" + alias + ", reg_dt="
+	return "User [userId=" + userId + ", pass=" + pass + ", userNm=" + userNm + ", alias=" + alias + ", reg_dt="
 			+ reg_dt + ", addr1=" + addr1 + ", addr2=" + addr2 + ", zipcode=" + zipcode + ", filename=" + filename
 			+ ", realfilename=" + realfilename + ", realfilename2=" + realfilename2 + "]";
 }

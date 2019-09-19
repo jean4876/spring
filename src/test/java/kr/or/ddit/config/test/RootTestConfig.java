@@ -49,8 +49,6 @@ public class RootTestConfig {
 	   
 	   @Ignore	//테스트코드를 실행하지 말고 건너띄어라
 	   @Test
-	   public void dummy() {
-		   
-	   }
+	   public void dummy() { }
 
 }

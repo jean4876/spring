@@ -110,7 +110,7 @@ public class UserDaoTest extends RootTestConfig {
 	      User userVo= userDao.getUser(userId);
 
 	      /***Then***/
-	      assertEquals("브라운", userVo.getUserNM());
+	      assertEquals("브라운", userVo.getuserNm());
 	      assertEquals("brown1234", userVo.getPass());
 
 	   }
@@ -189,7 +189,7 @@ public class UserDaoTest extends RootTestConfig {
 	      User user = new User();
 
 	      user.setUserId(userId);
-	      user.setUserNM("브라운테스트");
+	      user.setuserNm("브라운테스트");
 	      user.setPass("brownTest1234");
 	      user.setReg_dt(new SimpleDateFormat("yyyy-MM-dd").parse("2019-08-08"));
 	      user.setAlias("곰테스트");
@@ -211,7 +211,7 @@ public class UserDaoTest extends RootTestConfig {
 	      /***Given***/
 	      User user = new User();
 	      user.setUserId(userId);
-	      user.setUserNM("브라운테스트");
+	      user.setuserNm("브라운테스트");
 	      user.setPass("brownTest1234");
 	      user.setReg_dt(new SimpleDateFormat("yyyy-MM-dd").parse("2019-08-08"));
 	      user.setAlias("곰테스트");

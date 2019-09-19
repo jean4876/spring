@@ -27,14 +27,14 @@
 	<h3>spring validator jsr303</h3>
 	<form action="${cp }/mvc/jsr303">
 		<input type="text" name="userId" value="brown"><br>
-		<input type="text" name="userNM" value="브라운"><br>
+		<input type="text" name="userNm" value="브라운"><br>
 		<input type="submit" value="전송"/> <form:errors path="user.pass"></form:errors>
 	</form>
 	
 	<h3>spring validator</h3>
 	<form action="${cp }/mvc/validator">
 		<input type="text" name="userId" value="brown"> <form:errors path="user.userId"/><br>
-		<input type="text" name="userNM" value="브라운"><br>
+		<input type="text" name="userNm" value="브라운"><br>
 		<input type="submit" value="전송"/>
 	</form>
 	

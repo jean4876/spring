@@ -46,7 +46,7 @@
 								<c:forEach items="${userListOnlyHalf }" var="user">
 									<tr>
 										<td>${user.userId }</td>
-										<td>${user.userNM }</td>
+										<td>${user.userNm }</td>
 										<td>${user.alias }</td>
 										<td><fmt:formatDate value="${user.reg_dt }" pattern="yyyy-MM-dd"/></td>
 									</tr>

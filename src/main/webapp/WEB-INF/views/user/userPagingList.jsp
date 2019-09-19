@@ -57,7 +57,7 @@ model<%@page import="kr.or.ddit.user.model.User"%>
 <!--header  -->
 <%@include file="/WEB-INF/views/commonJsp/header.jsp"%>
 
-<body><form id="frm" action="${cp}/user" method="get">
+<body><form id="frm" action="${cp}/user/user" method="get">
 	<input type="hidden" id="userId" name="userId" />
 
 </form>
@@ -88,7 +88,7 @@ model<%@page import="kr.or.ddit.user.model.User"%>
                         %>
                         <tr>
                            <td><%=userVo.getUserId()%></td>
-                           <td><%=userVo.getUserNm()%></td>
+                           <td><%=userVo.getuserNm()%></td>
                            <td></td>
                            <td></td>
                         </tr>
@@ -100,7 +100,7 @@ model<%@page import="kr.or.ddit.user.model.User"%>
 								<tr class="userTr" data-userId="${user.userId }">
 									<input type="hidden" value="${user.userId }" />
 									<td>${user.userId}</td>
-									<td>${user.userNM}</td>
+									<td>${user.userNm}</td>
 									<td>${user.alias}</td>
 									<td><fmt:formatDate value="${user.reg_dt}" pattern="yyyy/MM/dd"/></td>
 								</tr>
@@ -108,7 +108,7 @@ model<%@page import="kr.or.ddit.user.model.User"%>
 						</table>
 					</div>
 
-					<a href="${cp }/userForm" class="btn btn-default pull-right">사용자 등록</a>
+					<a href="${cp }/user/userForm" class="btn btn-default pull-right">사용자 등록</a>
 
 					<div class="text-center">
 						<ul class="pagination">

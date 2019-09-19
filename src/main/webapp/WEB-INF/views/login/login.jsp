@@ -75,7 +75,7 @@
           HttpSession httpSession = request.getSession();
                  User userVo = (User)httpSession.getAttribute("S_USERVO");
                  String userName = "";
-                 userName = userVo == null ? "" : userVo.getUserNM();
+                 userName = userVo == null ? "" : userVo.getuserNm();
        %>
       사용자 이름 : <%=userName %>
 

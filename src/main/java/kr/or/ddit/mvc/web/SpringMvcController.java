@@ -31,7 +31,7 @@ import kr.or.ddit.exception.NoFileException;
 import kr.or.ddit.exception.ServerErrorException;
 import kr.or.ddit.mvc.model.Main;
 import kr.or.ddit.user.model.User;
-import kr.or.ddit.user.model.UserValidate;
+import kr.or.ddit.user.model.UserValidator;
 import kr.or.ddit.util.FileUtil;
 import kr.or.ddit.util.model.FileInfo;
 
@@ -178,7 +178,7 @@ public class SpringMvcController {
 		//반드시 메소드 인자 순서에서 form 객체 바로 뒤에 위치 해야한다.
 		
 		//validator
-		new UserValidate().validate(user, result);
+		new UserValidator().validate(user, result);
 		if(result.hasErrors()) {
 			logger.debug("hasError");
 		}else {

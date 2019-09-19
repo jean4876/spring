@@ -34,8 +34,8 @@ select a.*
 
   <!-- 사용자 등록 -->
   <insert id="insertUser" parameterType="userVo">
-  insert into users (userId, userNm, alias, reg_dt,  addr1, addr2, zipcode, pass,realfilename)
-	values(#{userId}, #{userNM}, #{alias}, #{reg_dt},  #{addr1}, #{addr2}, #{zipcode},#{pass},#{realfilename})
+  insert into users (userId, userNm, alias, reg_dt,  addr1, addr2, zipcode, pass,filename,realfilename,realfilename2)
+	values(#{userId}, #{userNm}, #{alias}, #{reg_dt},  #{addr1}, #{addr2}, #{zipcode},#{pass},#{filename, jdbcType = VARCHAR},#{realfilename, jdbcType = VARCHAR},#{realfilename2, jdbcType = VARCHAR})
   </insert>
 
   <!-- 사용자 삭제 -->
@@ -44,8 +44,8 @@ select a.*
   </delete>
   <!-- 사용자 정보 수정 -->
   <update id="updateUser" parameterType="userVo">
-  	update users set userNm = #{userNM}, alias = #{alias}, addr1 = #{addr1},
-  	addr2 = #{addr2}, zipcode = #{zipcode}, pass = #{pass}, realfilename = #{realfilename}
+  	update users set userNm = #{userNm}, alias = #{alias}, addr1 = #{addr1},
+  	addr2 = #{addr2}, zipcode = #{zipcode}, pass = #{pass}, filename = #{filename, jdbcType = VARCHAR},realfilename = #{realfilename, jdbcType = VARCHAR},realfilename2 = #{realfilename2, jdbcType = VARCHAR}
   	where userId = #{userId}
   </update>
 

@@ -94,7 +94,7 @@
             %>
             <tr>
                <td><%=userVo.getUserId() %></td>
-               <td><%=userVo.getUserNM() %></td>
+               <td><%=userVo.getuserNm() %></td>
                <td></td>
                <td></td>
             </tr>
@@ -107,7 +107,7 @@
             	<tr class = "userTr" data-userId="${user.userId}">
             		<input type="hidden" value="${user.userId}">
             		<td>${user.userId}</td>
-            		<td>${user.userNM}</td>
+            		<td>${user.userNm}</td>
             		<td>${user.alias}</td>
             		<td><fmt:formatDate value="${user.reg_dt }" pattern="yyyy-MM-dd"/></td>
             	</tr>

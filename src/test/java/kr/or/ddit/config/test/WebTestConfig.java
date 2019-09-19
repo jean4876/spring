@@ -1,10 +1,16 @@
 package kr.or.ddit.config.test;
 
+import javax.annotation.Resource;
+
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils;
+import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -34,9 +40,18 @@ public class WebTestConfig {
 		
 		protected MockMvc mockMvc;
 		
+		@Resource(name="datasource")
+		private BasicDataSource datasource;
+		
 		@Before
 		public void setup() {
 			mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
+			
+		      ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
+		      populator.addScript(new ClassPathResource("/kr/or/ddit/db/init.sql"));
+		      populator.setContinueOnError(false); // ->init.sql을 실행하다 에러가 발생할 경우 중지
+		      // 좀 위험함. 운영DB에서 사용한다면 많이 위험함 ㅋㅋ;
+		      DatabasePopulatorUtils.execute(populator, datasource);
 		}
 		
 		@Ignore
