@@ -9,6 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+
 
 
 public class User {
@@ -20,8 +23,10 @@ public class User {
    private String pass;      	  // 사용자 비밀번호
    private String userNm;  	      // 사용자 이름
    private String alias;     	  // 사용자 별명
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date reg_dt;
+   
+   @JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd")
+   @DateTimeFormat(pattern = "yyyy-MM-dd")
+   private Date reg_dt;
    private String addr1; 	      // 주소1
    private String addr2;     	  // 주소2
    private String zipcode;    	  // 우편번호
