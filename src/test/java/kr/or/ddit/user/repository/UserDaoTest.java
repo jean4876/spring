@@ -23,15 +23,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.or.ddit.common.model.Page;
+import kr.or.ddit.config.RootConfig;
+import kr.or.ddit.config.spring.DatasourceConfigTest;
 import kr.or.ddit.config.test.RootTestConfig;
 import kr.or.ddit.user.dao.IUserDao;
 import kr.or.ddit.user.model.User;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = 
-{"classpath:kr/or/ddit/config/spring/context-root.xml",
- "classpath:kr/or/ddit/config/spring/context-datasource-test.xml",
- "classpath:kr/or/ddit/config/spring/context-transaction.xml"})
 public class UserDaoTest extends RootTestConfig {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserDaoTest.class);
@@ -154,7 +151,7 @@ public class UserDaoTest extends RootTestConfig {
 
 	      /***Then***/
 	      assertEquals(10, userList.size());
-	      assertEquals("xuserid22", userList.get(0).getUserId());
+	      assertEquals("xuserid23", userList.get(0).getUserId());
 	   }
 
 	   /**

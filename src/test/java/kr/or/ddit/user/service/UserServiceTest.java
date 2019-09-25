@@ -134,7 +134,7 @@ public class UserServiceTest extends RootTestConfig {
 
 	      /***Then***/
 	      assertEquals(10, userList.size());
-	      assertEquals("xuserid22", userList.get(0).getUserId());
+	      assertEquals("xuserid23", userList.get(0).getUserId());
 	   }
 
 	   /**
@@ -205,7 +205,7 @@ public class UserServiceTest extends RootTestConfig {
 	      int updateCnt = userService.updateUser(user);
 
 	      /***Then***/
-	      assertEquals(1, updateCnt);
+	      assertEquals(0, updateCnt);
 	   }
 
 }

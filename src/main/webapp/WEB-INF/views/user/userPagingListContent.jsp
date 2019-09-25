@@ -5,19 +5,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="icon" href="../../favicon.ico">
 
-<title>Jsp-basic</title>
-<%@ include file="/WEB-INF/views/commonJsp/basicLib.jsp"%>
 <script>
 	//문서로딩이 완료되고 나서
 	$(document).ready(function() {
@@ -54,21 +42,11 @@
 	});
 </script>
 
-<!--header  -->
-<%@include file="/WEB-INF/views/commonJsp/header.jsp"%>
-
-<body><form id="frm" action="${cp}/user/user" method="get">
+<form id="frm" action="${cp}/user/user" method="get">
 	<input type="hidden" id="userId" name="userId" />
 
 </form>
-<div class="container-fluid">
-	<div class="row">
 
-		<div class="col-sm-3 col-md-2 sidebar">
-			<!--left  -->
-			<%@ include file="/WEB-INF/views/commonJsp/left.jsp"%>
-		</div>
-		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 			<div class="row">
 				<div class="col-sm-8 blog-main">
 					<h2 class="sub-header">사용자</h2>
@@ -81,6 +59,21 @@
 								<th>등록일시</th>
 							</tr>
 
+							<%--          <%
+                           List<User> userList = (List<User>) request.getAttribute("userList");
+
+                           for (User userVo : userList) {
+                        %>
+                        <tr>
+                           <td><%=userVo.getUserId()%></td>
+                           <td><%=userVo.getuserNm()%></td>
+                           <td></td>
+                           <td></td>
+                        </tr>
+                        <%
+                           }
+                        %>         --%>
+							<%--for(User user : userList) --%>
 							<c:forEach items="${userList}" var="user" varStatus="loop">
 								<tr class="userTr" data-userId="${user.userId }">
 									<input type="hidden" value="${user.userId }" />
@@ -144,8 +137,3 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-</div>
-</body>
-</html>
