@@ -61,6 +61,7 @@ model<%@page import="kr.or.ddit.user.model.User"%>
 	function getUserHtmlList(page, pagesize) {
 		$.ajax({
 			url : "${cp}/user/userPagingListHtmlAjax",
+			
 			data : "page=" + page + "&pagesize=" + pagesize,
 			success : function(data) {
 				console.log(data);
@@ -77,7 +78,25 @@ model<%@page import="kr.or.ddit.user.model.User"%>
 		});
 	}
 	
-
+	function getUserListRequestBody(page, pagesize){
+		var param ={};
+		param.page = page;
+		param.pagesize = pagesize;
+		console.log("param :  " + param);
+		$.ajax({
+			url : "${cp}/user/userPagingListAjaxRequestBody",
+			contentType : "application/json",
+			dataType : "json",
+			method : "post",
+			//제이슨 문자열을 함수로 바꿔줌
+			data : JSON.stringify(param),
+			success : function(data) {
+				createUserListTbody(data.userList); //유저 리스트 html 생성
+				createPagination(data.paginationSize);//페이지 네이션 html생성
+			}
+		});
+		
+	}
 	//ajax call을 통해 page, pagesize 하는 사용자
 	//데이터를 가져온다
 	function getUserList(page, pagesize) {
